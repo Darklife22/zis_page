@@ -269,6 +269,11 @@ body.modo-oscuro header nav a {
     transform: translateY(0);
   }
   
+  #inicio .titulo-zis-inicio{
+    color: var(--naranja) !important;
+    font-size: 1.4em !important;
+    max-width: 440px !important;
+  }
 
   
   #inicio .bloque-texto h2 {
@@ -291,7 +296,8 @@ body.modo-oscuro header nav a {
   }
 
   #inicio .imagen h3 {
-    max-width: 350px;
+    max-width: 400px;
+    font-size: 1.1em;
     text-decoration: none;
     font-weight: normal; /* Esto quita la negrilla */
     text-align: center;
@@ -722,6 +728,7 @@ body.modo-oscuro .evento-info a:hover {
     height: 150px;
     object-fit: cover;
     margin-bottom: 20px;
+    border: 2px var(--naranja) solid;
 }
 
 .card h3 {
@@ -734,11 +741,248 @@ body.modo-oscuro .evento-info a:hover {
     font-weight: 500;
 }
 
+.btn-ver-mas {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: var(--naranja);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-ver-mas:hover {
+  background-color: var(--naranja-oscuro);
+  transform: scale(1.03);
+}
+
+
+/* seccion de publicaciones ZIS  libros, papers, revista*/
+.publicaciones-zis {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.publicaciones-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.pub-card {
+  display: flex;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.pub-card:hover {
+  transform: scale(1.02);
+}
+
+.pub-card img {
+  width: 300px;
+  height: auto;
+  object-fit: cover;
+}
+
+.pub-card h3{
+  color: var(--naranja);
+}
+
+.pub-content {
+  padding: 20px;
+  text-align: left;
+  flex: 1;
+}
+
+.pub-content h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.pub-content p {
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.pub-content a {
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.pub-content a:hover {
+  text-decoration: underline;
+}
+
+/* Modo oscuro */
+body.modo-oscuro .pub-card {
+  background: #1f1f1f;
+  color: white;
+}
+
+body.modo-oscuro .pub-content p {
+  color: #ccc;
+}
+
+body.modo-oscuro .pub-content a {
+  color: #66b2ff;
+}
+
+/* seccion para las redes sociales Zis */
+.redes-zis {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.redes-zis p {
+  margin-bottom: 30px;
+  color: var(--gris-oscuro);
+  text-align: center;
+}
+
+.redes-cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.red-social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease;
+}
+
+.red-social img {
+  max-width: 200px;
+  object-fit: contain;
+  margin-bottom: 10px;
+  transition: filter 0.3s ease;
+}
+
+.red-social:hover {
+  transform: translateY(-5px);
+}
+
+.red-social:hover img {
+  filter: brightness(1.2);
+}
+
+.red-social span {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* Modo oscuro */
+body.modo-oscuro .redes-zis p {
+  color: #ccc;
+}
+
+body.modo-oscuro .red-social span {
+  color: #f0f0f0;
+}
+
+
+/* seccion de grupos whatsapp zis */
+
+.grupos-zis {
+  text-align: center;
+  padding: 20px 20px;
+}
+
+.grupos-zis p {
+  color: var(--gris-oscuro);
+  margin-bottom: 30px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.grupos-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.grupo-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  width: 280px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.grupo-card:hover {
+  transform: translateY(-5px);
+}
+
+.grupo-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: var(--gris-oscuro);
+}
+
+.grupo-card .qr {
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto 15px;
+  display: block;
+  border-radius: 8px;
+}
+
+.btn-grupo {
+  display: inline-block;
+  background-color: #25D366;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-grupo:hover {
+  background-color: #1da851;
+}
+
+/* Modo oscuro */
+body.modo-oscuro .grupo-card {
+  background-color: #1f1f1f;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.02);
+}
+
+body.modo-oscuro .grupo-card h3 {
+  color: #fff;
+}
+
+body.modo-oscuro .grupos-zis p{
+  color: var(--gris-claro)
+}
+
+body.modo-oscuro .btn-grupo {
+  background-color: #2ecc71;
+}
+
+
 /* Estilos en modo oscuro */
 body.modo-oscuro .card {
-    background: var(--gris-claro-oscuro);
+    background: var(--gris-oscuro);
     color: var(--blanco);
 }
+
 
 body.modo-oscuro .card-header {
     background-color: var(--naranja-oscuro);
@@ -773,50 +1017,84 @@ body.modo-oscuro #investigadores p{
     }
 }
 
-/* Formulario */
-form input, form textarea, form button {
-    width: 100%;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    font-size: 1rem;
-}
-
-form button {
-    background: var(--naranja);
-    color: var(--blanco);
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-form button:hover {
-    background-color: var(--naranja-oscuro);
-}
-
-form button:disabled {
-    background-color: #ddd;
-    cursor: not-allowed;
-}
-
-#confirmacion {
-    margin-top: 20px;
-    color: var(--naranja);
-    font-weight: bold;
-    font-size: 1.1rem;
-}
-
 /* Footer */
-footer {
-    text-align: center;
-    padding: 20px 0;
-    background-color: var(--gris-claro);
-    margin-top: 20px;
-    color: var(--gris);
+.zis-footer {
+  background-color: var(--naranja);
+  color: var(--gris-oscuro);
+  padding: 40px 20px 20px;
+  font-size: 0.95rem;
 }
 
-body.modo-oscuro footer {
-    background-color: var(--gris-claro-oscuro);
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
+
+.footer-col {
+  flex: 1 1 250px;
+}
+
+.footer-col h4 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: var(--gris-oscuro);
+}
+
+.footer-col p {
+  color: var(--gris-claro) !important;
+}
+
+.footer-col a {
+  color: var(--gris-claro);
+  text-decoration: none;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.footer-col a:hover{
+  color: var(--naranja-oscuro);
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 15px;
+  font-size: 0.85rem;
+}
+
+.footer-bottom p{
+  text-align: center;
+}
+
+/* Modo oscuro consistente */
+body.modo-oscuro .zis-footer {
+  background-color: var(--gris-oscuro);
+  color: var(--gris-claro);
+}
+
+body.modo-oscuro .footer-col h4 {
+  color: var(--amarillo-claro);
+}
+
+body.modo-oscuro .footer-col p{
+  color: var(--naranja) !important;
+}
+
+body.modo-oscuro .footer-col a{
+  color: var(--naranja);
+}
+
+body.modo-oscuro .footer-col a:hover{
+  color: var(--naranja-oscuro);
+}
+

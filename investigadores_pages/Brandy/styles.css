@@ -1,0 +1,446 @@
+/* Variables */
+:root {
+    --naranja: #F7931E;
+    --naranja-oscuro: #F15A24;
+    --gris-claro: #E2E4E7;
+    --gris: #AEADB3;
+    --blanco: #fff;
+    --sombra-suave: rgba(0, 0, 0, 0.1);
+    --sombra-fuerte: rgba(0, 0, 0, 0.2);
+    --gris-oscuro: #121212;
+    --gris-claro-oscuro: #727176;
+    --primario: var(--naranja);
+}
+
+/* Fuentes */
+@font-face {
+    font-family: 'Gotham';
+    src: url('fonts/Gotham.woff2') format('woff2'),
+         url('fonts/Gotham.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'BebasKai';
+    src: url('fonts/BebasKai.woff2') format('woff2'),
+         url('fonts/BebasKai.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* GENERAL */
+body {
+    font-family: 'Gotham', 'Bebas Kai', sans-serif;
+    background-color: var(--gris-claro);
+    color: var(--gris-oscuro);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 0;
+    transition: background-color 0.4s, color 0.4s;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('imgs/general/fondo_page2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    opacity: 0.08;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* HEADER */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--naranja);
+    color: var(--blanco);
+    padding: 15px 30px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: background-color 0.4s, color 0.4s;
+}
+
+.header .logo {
+    display: flex;
+    align-items: center;
+}
+
+.header .logo img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.header nav a {
+    color: var(--blanco);
+    font-size: 15px;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.header nav a:hover {
+    background: var(--naranja-oscuro);
+}
+
+.header nav a:focus{
+    background: var(--naranja-oscuro);
+}
+
+/* PERFIL */
+.investigador-container {
+    padding: 30px 5%;
+}
+
+.perfil-investigador {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.foto-investigador {
+    max-width: 280px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.info-investigador {
+    flex: 1;
+    min-width: 300px;
+}
+
+.info-investigador h1 {
+    font-size: 2.2rem;
+    margin: 0;
+    color: var(--primario);
+}
+
+.info-investigador .cargo {
+    font-weight: bold;
+    color: #666;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.info-investigador .bio {
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+.datos-contacto {
+    list-style: none;
+    padding: 0;
+}
+
+.datos-contacto li {
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+.datos-contacto i {
+    color: var(--primario);
+    margin-right: 8px;
+}
+
+/* PUBLICACIONES */
+.publicaciones-investigador {
+    margin-top: 30px;
+}
+
+.publicaciones-investigador h2 {
+    color: var(--primario);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.cards-publicaciones {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.card-publicacion {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-publicacion:hover {
+    transform: translateY(-4px);
+}
+
+.card-publicacion img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-publicacion div {
+    padding: 15px;
+}
+
+.card-publicacion h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--gris-oscuro);
+}
+
+.card-publicacion p {
+    margin: 8px 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.card-publicacion a {
+    text-decoration: none;
+    color: var(--primario);
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.card-publicacion a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+.zis-footer {
+    background-color: var(--naranja);
+    color: var(--gris-oscuro);
+    padding: 40px 20px 20px;
+    font-size: 0.95rem;
+  }
+  
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-col {
+    flex: 1 1 250px;
+  }
+  
+  .footer-col h4 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: var(--gris-oscuro);
+  }
+  
+  .footer-col p {
+    color: var(--gris-claro) !important;
+  }
+  
+  .footer-col a {
+    color: var(--gris-claro);
+    text-decoration: none;
+    margin-bottom: 8px;
+    display: block;
+  }
+  
+  .footer-col a:hover{
+    color: var(--naranja-oscuro);
+  }
+  
+  .footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 15px;
+    font-size: 0.85rem;
+  }
+  
+  .footer-bottom p{
+    text-align: center;
+  }
+  
+  /* Modo oscuro consistente */
+  body.modo-oscuro .zis-footer {
+    background-color: var(--gris-oscuro);
+    color: var(--gris-claro);
+  }
+  
+  body.modo-oscuro .footer-col h4 {
+    color: var(--amarillo-claro);
+  }
+  
+  body.modo-oscuro .footer-col p{
+    color: var(--naranja) !important;
+  }
+  
+  body.modo-oscuro .footer-col a{
+    color: var(--naranja);
+  }
+  
+  body.modo-oscuro .footer-col a:hover{
+    color: var(--naranja-oscuro);
+  }
+  
+
+/* Botón flotante de modo oscuro */
+.modo-oscuro-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--gris-claro-oscuro);
+    color: var(--blanco);
+    font-size: 24px;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px var(--sombra-suave);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.modo-oscuro-btn:hover {
+    background-color: var(--naranja-oscuro);
+    transform: scale(1.1);
+}
+
+body.modo-oscuro .modo-oscuro-btn {
+    background-color: var(--gris-claro);
+}
+
+body.modo-oscuro .modo-oscuro-btn:hover {
+    background-color: var(--naranja-oscuro);
+    transform: scale(1.1);
+}
+
+/* Modo oscuro */
+body.modo-oscuro {
+    background-color: var(--gris-oscuro);
+    color: var(--gris-claro);
+}
+
+body.modo-oscuro .header {
+    background-color: rgba(30, 30, 30, 0.95);
+    color: var(--gris-claro);
+}
+
+body.modo-oscuro .header nav a {
+    color: var(--gris-claro) !important;
+}
+
+body.modo-oscuro .header nav a:hover {
+    color: var(--naranja);
+}
+
+body.modo-oscuro .card-publicacion {
+    background-color: #1e1e1e;
+    color: var(--gris-claro);
+}
+
+body.modo-oscuro .card-publicacion h3 {
+    color: var(--gris-claro);
+}
+
+body.modo-oscuro .card-publicacion p {
+    color: #ccc;
+}
+
+
+/* Transiciones suaves */
+html {
+    scroll-behavior: smooth;
+}
+
+/* seccion del modal de publicacion o proyecto */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  .modal-content {
+    background: var(--gris-claro);
+    color: var(--gris-oscuro);
+    padding: 2rem;
+    border-radius: 15px;
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+    text-align: center;
+    animation: slideIn 0.4s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  }
+  
+  .modal-content img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
+  
+  .modal-content h3 {
+    color: var(--naranja);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .modal-content p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+  }
+  
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    color: #666;
+    cursor: pointer;
+  }
+  
+  @keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
